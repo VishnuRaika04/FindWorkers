@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profiles</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="profiles.css">
+  <script src="https://kit.fontawesome.com/b98523537f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Navbar Section Starts Here -->
+  <section class="navbar">
+    <div class="container">
+      <div class="logo">
+        <a href="#" title="Logo">
+          <img src="FW_Logo.jpeg" alt="FindWorker Logo" class="img-responsive">
+        </a>
+      </div>
+
+      <div class="menu text-right">
+        <ul>
+          <li>
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li>
+            <a href="registeration.html"><i class="fas fa-certificate"></i> Register</a>
+          </li>
+          <li>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+          </li>
+          <li>
+            <a href="contact.html"><i class="fas fa-address-book"></i> Contact</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="clearfix"></div>
+    </div>
+  </section>
+  <!-- Navbar Section Ends Here -->
+
+  <!-- Profiles Section Starts Here -->
+  <section class="profiles">
+    <div class="continer">
+      <h2>User Profiles</h2>
+      <div class="filter">
+        <label for="workcategory">Filter by Work Category:</label>
+        <select id="workcategory">
+          <option value="">All</option>
+          <option value="painter">Painter</option>
+          <option value="mason">Mason</option>
+          <option value="carpenter">Carpenter</option>
+          <option value="electrician">Electrician</option>
+          <option value="plumber">Plumber</option>
+          <option value="labourer">Labourer</option>
+          <option value="others">Others</option>
+        </select>
+      </div>
+      <div class="profile-list" id="profileList">
+        <!-- Generated profile cards will be inserted here dynamically -->
+      </div>
+    </div>
+  </section>
+  <!-- Profiles Section Ends Here -->
+
+  <!-- Social Section Starts Here -->
+  <section class="social">
+    <div class="continer text-center">
+      <ul>
+        <li>
+          <a href="https://github.com/VishnuRaika04"><i class="fab fa-facebook-f"></i></a>
+        </li>
+        <li>
+          <a href="https://github.com/VishnuRaika04"><i class="fab fa-instagram"></i></a>
+        </li>
+        <li>
+          <a href="https://github.com/VishnuRaika04"><i class="fab fa-twitter"></i></a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <!-- Social Section Ends Here -->
+
+  <!-- Footer Section Starts Here -->
+  <section class="footer">
+    <div class="container text-center">
+      <p>All rights reserved. Designed By <a href="https://github.com/VishnuRaika04">Vishnu Solanki Raika</a></p>
+    </div>
+  </section>
+  <!-- Footer Section Ends Here -->
+
+  <!-- Firebase SDK and Custom JavaScript -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+  <script>
+    // Initialize Firebase
+    const firebaseConfig = {
+      // Your Firebase project configuration
+      // ... apiKey: "AIzaSyCC2r6pceURWAAsaikzXNokcMLbdyI7xaM",
+  authDomain: "findworker-31461.firebaseapp.com",
+  databaseURL: "https://findworker-31461-default-rtdb.firebaseio.com",
+  projectId: "findworker-31461",
+  storageBucket: "findworker-31461.appspot.com",
+  messagingSenderId: "471185806944",
+  appId: "1:471185806944:web:56e9fcb93422af2fc69505",
+  measurementId: "G-3VBJRZXQGR"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    // Retrieve registration data from Firebase Realtime Database
+    const profileList = document.getElementById('profileList');
+    const workCategoryFilter = document.getElementById('workcategory');
+
+    // Function to generate profile cards
+    function generateProfileCard(profile) {
+      const card = document.createElement('div');
+      card.classList.add('profile-card');
+
+      // Add profile image
+      const profileImage = document.createElement('img');
+      profileImage.src = profile.profileImage;
+      profileImage.alt = 'Profile Image';
+      card.appendChild(profileImage);
+
+      // Add profile details
+      const details = document.createElement('div');
+      details.classList.add('profile-details');
+      details.innerHTML = `
+        <h3>${profile.fullname}</h3>
+        <p><strong>Phone:</strong> ${profile.phone}</p>
+        <p><strong>Aadhar:</strong> ${profile.aadhar}</p>
+        <p><strong>Address:</strong> ${profile.address}</p>
+        <p><strong>City:</strong> ${profile.city}</p>
+        <p><strong>State:</strong> ${profile.state}</p>
+        <p><strong>Work Category:</strong> ${profile.workCategory}</p>
+        <p><strong>Gender:</strong> ${profile.gender}</p>
+      `;
+      card.appendChild(details);
+
+      return card;
+    }
+
+    // Function to filter profiles by work category
+    function filterProfilesByCategory(category) {
+      const profileCards = document.querySelectorAll('.profile-card');
+      profileCards.forEach((card) => {
+        const profile = card.dataset.profile;
+        if (category === '' || profile === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Listen for filter changes
+    workCategoryFilter.addEventListener('change', function() {
+      const selectedCategory = this.value;
+      filterProfilesByCategory(selectedCategory);
+    });
+
+    // Retrieve registration data from Firebase
+    firebase.database().ref('registration').once('value')
+      .then(function(snapshot) {
+        const profiles = snapshot.val();
+        for (const profileId in profiles) {
+          const profile = profiles[profileId];
+          const card = generateProfileCard(profile);
+          card.dataset.profile = profile.workCategory; // Store work category as data attribute
+          profileList.appendChild(card);
+        }
+      })
+      .catch(function(error) {
+        console.error('Error retrieving registration data:', error);
+      });
+  </script>
+</body>
+
+</html>

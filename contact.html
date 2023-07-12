@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>For any Queries Contact Us</title>
+    <script src="https://kit.fontawesome.com/b98523537f.js" crossorigin="anonymous"></script> 
+    <meta name="author" content="Codeconvey" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles1.css">
+    <!--Only for demo purpose - no need to add.-->
+    <link rel="stylesheet" href="style1.css"/>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+    <script>
+      // Initialize Firebase
+      var firebaseConfig = {
+        apiKey: "AIzaSyCC2r6pceURWAAsaikzXNokcMLbdyI7xaM",
+  authDomain: "findworker-31461.firebaseapp.com",  databaseURL: "https://findworker-31461-default-rtdb.firebaseio.com",
+  projectId: "findworker-31461",
+  storageBucket: "findworker-31461.appspot.com",
+  messagingSenderId: "471185806944",
+  appId: "1:471185806944:web:56e9fcb93422af2fc69505",
+  measurementId: "G-3VBJRZXQGR"
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      // Get a reference to the database service
+      var database = firebase.database();
+
+      // Submit form data to Firebase
+      function submitForm() {
+        var name = document.getElementById("txt_name").value;
+        var phone = document.getElementById("txt_phone").value;
+        var subject = document.getElementById("txt_subject").value;
+        var message = document.getElementById("txt_message").value;
+
+        database.ref("contact-form").push().set({
+          name: name,
+          phone: phone,
+          subject: subject,
+          message: message
+        });
+
+        document.getElementById("confirm").innerText = "Form submitted successfully!";
+        document.getElementById("txt_name").value = "";
+        document.getElementById("txt_phone").value = "";
+        document.getElementById("txt_subject").value = "";
+        document.getElementById("txt_message").value = "";
+      }
+    </script>
+</head>
+<body>
+<div class="ScriptTop">
+    <div class="rt-container">
+        <div class="col-rt-4" id="float-right">
+            <!-- Ad Here -->
+        </div>
+    </div>
+</div>
+
+<!-- Navbar Section Starts Here -->
+<section class="navbar">
+    <div class="container">
+        <div class="logo">
+            <a href="#" title="Logo">
+                <img src="FW_Logo.jpeg" alt="Findworker logo" class="img-responsive">
+            </a>
+        </div>
+
+        <div class="menu text-right">
+            <ul>
+                <li class="active">
+                    <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                </li>
+                <li>
+                    <a href="registeration.html"><i class="fa-solid fa-certificate fa-white"></i> Register</a>
+                </li>
+                <li>
+                    <a href="about.html"><i class="fa-solid fa-cheese"></i> About</a>
+                </li>
+                <li>
+                    <a href="contact.html"><i class="fa-solid fa-address-book"></i> Contact</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="clearfix"></div>
+    </div>
+</section>
+<!-- Navbar Section Ends Here -->
+
+<header class="ScriptHeader">
+    <div class="rt-container">
+        <div class="col-rt-12">
+            <div class="rt-heading">
+                <h1>For any Queries Contact Us</h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section>
+    <div class="rt-container">
+        <div class="col-rt-12">
+            <div class="Scriptcontent">
+                <div>
+                    <div class="container">
+                        <div class="contact-parent">
+                            <div class="contact-child child1">
+                                <p>
+                                    <i class="fas fa-map-marker-alt"></i> Address <br />
+                                    <span> 
+                                        <br />
+                                        Mathura (India)
+                                        <br/> Vishnu Solanki
+                                    </span>
+                                </p>
+
+                                <p>
+                                    <i class="fas fa-phone-alt"></i> Let's Talk <br />
+                                    <span> 9368407169 </span>
+                                </p>
+
+                                <p>
+                                    <i class="far fa-envelope"></i> General Support <br />
+                                    <span><a href="mailto:vishnuraika639@gmail.com" target="_blank">vishnuraika639@gmail.com </a></span>
+                                </p>
+                            </div>
+
+                            <div class="contact-child child2">
+                                <div class="inside-contact">
+                                    <h2>Contact Us</h2>
+                                    <h3>
+                                        <span id="confirm"></span>
+                                    </h3>
+
+                                    <p>Name *</p>
+                                    <input id="txt_name" type="text" Required="required">
+
+                                    <p>Phone *</p>
+                                    <input id="txt_phone" type="text" Required="required">
+
+                                    <p>Subject *</p>
+                                    <input id="txt_subject" type="text" Required="required">
+
+                                    <p>Message *</p>
+                                    <textarea id="txt_message" rows="4" cols="20" Required="required"></textarea>
+                                    
+                                    <input type="submit" id="btn_send" value="SEND" onclick="submitForm()">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- social Section Starts Here -->
+<section class="social">
+    <div class="container text-center">
+        <ul>
+            <li>
+                <a href="https://github.com/VishnuRaika04"><img src="https://img.icons8.com/fluent/50/000000/facebook-new.png" /></a>
+            </li>
+            <li>
+                <a href="https://github.com/VishnuRaika04"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" /></a>
+            </li>
+            <li>
+                <a href="https://github.com/VishnuRaika04"><img src="https://img.icons8.com/fluent/48/000000/twitter.png" /></a>
+            </li>
+        </ul>
+    </div>
+</section>
+<!-- social Section Ends Here -->
+
+<!-- footer Section Starts Here -->
+<section class="footer">
+    <div class="container text-center">
+        <p>All rights reserved. Designed By <a href="#">Vishnu Solanki Raika</a></p>
+    </div>
+</section>
+<!-- footer Section Ends Here -->
+
+<!-- Analytics -->
+
+</body>
+</html>

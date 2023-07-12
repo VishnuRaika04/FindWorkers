@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="r.css">
+    <script src="https://kit.fontawesome.com/b98523537f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Navbar Section Starts Here -->
+    <section class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="#" title="Logo">
+                    <img src="FW_Logo.jpeg" alt="FindWorker Logo" class="img-responsive">
+                </a>
+            </div>
+
+            <div class="menu text-right">
+                <ul>
+                    <li>
+                        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li>
+                        <a href="registration.html"><i class="fas fa-certificate"></i> Register</a>
+                    </li>
+                    <li>
+                        <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+                    </li>
+                    <li>
+                        <a href="contact.html"><i class="fas fa-address-book"></i> Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </section>
+    <!-- Navbar Section Ends Here -->
+
+    <!-- Registration form Section Starts Here -->
+    <section class="container">
+        <div class="title">Registration</div>
+        <div class="content">
+            <form id="regform" action="#">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Full Name</span>
+                        <input id="fullname" type="text" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Phone No.</span>
+                        <input id="phone" type="number" placeholder="Enter your mobile number" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Aadhar Number</span>
+                        <input id="aadhar" type="number" placeholder="Enter your Aadhar no." required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Address</span>
+                        <input id="address" type="text" placeholder="Enter your full address" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">City</span>
+                        <input id="city" type="text" placeholder="Enter your city" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">State</span>
+                        <input id="state" type="text" placeholder="Enter state name" required>
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <div class="details">Work Category</div>
+                    <span class="details">
+                        <select id="workcategory" name="workcategory" required>
+                            <option value="">Select Work Category:</option>
+                            <option value="painter">Painter</option>
+                            <option value="mason">Mason</option>
+                            <option value="carpenter">Carpenter</option>
+                            <option value="electrician">Electrician</option>
+                            <option value="plumber">Plumber</option>
+                            <option value="labourer">Labourer</option>
+                            <option value="others">Others</option>
+                        </select>
+                    </span>
+                </div>
+
+                <div class="input-box">
+                    <label for="profile_image">Profile Image:</label>
+                    <input type="file" id="profile_image" name="profile_image" accept="image/jpeg, image/png">
+                </div>
+
+                <div class="gender-details">
+                    <input type="radio" name="gender" id="dot-1" value="Male">
+                    <input type="radio" name="gender" id="dot-2" value="Female">
+                    <input type="radio" name="gender" id="dot-3" value="Prefer not to say">
+                    <span class="gender-title">Gender</span>
+                    <div class="category">
+                        <label for="dot-1">
+                            <span class="dot one"></span>
+                            <span class="gender">Male</span>
+                        </label>
+                        <label for="dot-2">
+                            <span class="dot two"></span>
+                            <span class="gender">Female</span>
+                        </label>
+                        <label for="dot-3">
+                            <span class="dot three"></span>
+                            <span class="gender">Prefer not to say</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="button">
+                    <input type="submit" value="Register">
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- Registration form Section Ends Here -->
+
+    <!-- Social Section Starts Here -->
+    <section class="social">
+        <div class="container text-center">
+            <ul>
+                <li>
+                    <a href="https://github.com/VishnuRaika04"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li>
+                    <a href="https://github.com/VishnuRaika04"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li>
+                    <a href="https://github.com/VishnuRaika04"><i class="fab fa-twitter"></i></a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- Social Section Ends Here -->
+
+    <!-- Footer Section Starts Here -->
+    <section class="footer">
+        <div class="container text-center">
+            <p>All rights reserved. Designed By <a href="https://github.com/VishnuRaika04">Vishnu Solanki Raika</a></p>
+        </div>
+    </section>
+    <!-- Footer Section Ends Here -->
+
+    <!-- Firebase SDK and Custom JavaScript -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script>
+        // Initialize Firebase
+        const firebaseConfig = {
+            // Your Firebase project configuration
+            apiKey: "AIzaSyCC2r6pceURWAAsaikzXNokcMLbdyI7xaM",
+  authDomain: "findworker-31461.firebaseapp.com",  databaseURL: "https://findworker-31461-default-rtdb.firebaseio.com",
+  projectId: "findworker-31461",
+  storageBucket: "findworker-31461.appspot.com",
+  messagingSenderId: "471185806944",
+  appId: "1:471185806944:web:56e9fcb93422af2fc69505",
+  measurementId: "G-3VBJRZXQGR"
+        };
+        firebase.initializeApp(firebaseConfig);
+
+        // Handle form submission
+        document.getElementById('regform').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+
+            // Get form values
+            var fullname = document.getElementById('fullname').value;
+            var phone = document.getElementById('phone').value;
+            var aadhar = document.getElementById('aadhar').value;
+            var address = document.getElementById('address').value;
+            var city = document.getElementById('city').value;
+            var state = document.getElementById('state').value;
+            var workCategory = document.getElementById('workcategory').value;
+            var gender = document.querySelector('input[name="gender"]:checked').value;
+            var profileImage = document.getElementById('profile_image').files[0];
+
+            // Create a storage reference
+            var storageRef = firebase.storage().ref('profile_images/' + profileImage.name);
+
+            // Upload the profile image to Firebase Storage
+            var uploadTask = storageRef.put(profileImage);
+
+            // Listen for state changes and handle completion or errors
+            uploadTask.on(
+                firebase.storage.TaskEvent.STATE_CHANGED,
+                function(snapshot) {
+                    // Show upload progress if needed
+                    // var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                    // console.log('Upload progress: ' + progress + '%');
+                },
+                function(error) {
+                    // Handle upload errors
+                    console.error('Error uploading profile image:', error);
+                },
+                function() {
+                    // Profile image uploaded successfully, get the download URL
+                    uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+                        // Store form data in the Firebase Realtime Database
+                        firebase
+                            .database()
+                            .ref('registration')
+                            .push({
+                                fullname: fullname,
+                                phone: phone,
+                                aadhar: aadhar,
+                                address: address,
+                                city: city,
+                                state: state,
+                                workCategory: workCategory,
+                                gender: gender,
+                                profileImage: downloadURL
+                            })
+                            .then(function() {
+                                // Clear form fields
+                                document.getElementById('fullname').value = '';
+                                document.getElementById('phone').value = '';
+                                document.getElementById('aadhar').value = '';
+                                document.getElementById('address').value = '';
+                                document.getElementById('city').value = '';
+                                document.getElementById('state').value = '';
+                                document.getElementById('workcategory').value = '';
+                                document.querySelector('input[name="gender"]:checked').checked = false;
+                                document.getElementById('profile_image').value = '';
+
+                                // Show success message or perform any additional actions
+                                console.log('Registration data submitted successfully!');
+                            })
+                            .catch(function(error) {
+                                // Handle errors
+                                console.error('Error submitting registration data:', error);
+                            });
+                    });
+                }
+            );
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,247 @@
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #333;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* About styles */
+.about-section {
+  padding: 120px 0;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.about-section .sec-title {
+  margin-bottom: 50px;
+}
+
+.about-section .sec-title .title {
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+  color: #00aeef;
+  margin-bottom: 15px;
+}
+
+.about-section .sec-title h2 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.about-section .sec-title h2:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #00aeef;
+}
+
+.about-section .text {
+  font-size: 20px;
+  line-height: 32px;
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.about-section .btn-box {
+  margin-top: 30px;
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out forwards;
+  animation-delay: 0.5s;
+}
+
+.about-section .btn-box a {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #00aeef;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.about-section .btn-box a:hover {
+  background-color: #0794c9;
+}
+
+.about-section .image-column {
+  position: relative;
+  margin-top: 30px;
+  opacity: 0;
+  animation: fadeInRight 1s ease-in-out forwards;
+  animation-delay: 0.5s;
+}
+
+.about-section .image-column img {
+  max-width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-section .author-desc {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.about-section .our-goal {
+  margin-top: 80px;
+  padding-top: 60px;
+  background-color: #fff;
+}
+
+.about-section .our-goal .sec-title {
+  margin-bottom: 50px;
+}
+
+.about-section .our-goal .sec-title h2 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.about-section .our-goal .sec-title h2:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #00aeef;
+}
+
+.about-section .our-goal .text {
+  font-size: 20px;
+  line-height: 32px;
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.about-section .our-goal .text:last-child {
+  margin-bottom: 0;
+}
+
+.about-section .our-goal .text p {
+  margin-bottom: 10px;
+}
+
+.about-section .our-goal .text span {
+  font-weight: bold;
+  color: #00aeef;
+}
+
+/* Social Section */
+.social {
+  background-color: #00aeef;
+  padding: 30px 0;
+}
+
+.social ul {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.social ul li {
+  margin: 0 10px;
+  list-style: none;
+}
+
+.social ul li a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.social ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Footer Section */
+.footer {
+  padding: 20px 0;
+  background-color: #f9f9f9;
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+}
+
+.footer a {
+  color: #00aeef;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Keyframes */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

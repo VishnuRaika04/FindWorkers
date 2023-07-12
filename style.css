@@ -1,0 +1,281 @@
+/* 
+    
+    FindWorker version: 1.0;
+*/
+
+/* CSS for All */
+body{
+    background-color: White;
+    width:100%;
+}
+
+*{
+    margin: 0px 0px;
+    padding: 0px 0px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    
+
+}
+
+.container{
+    width: 100%;
+    margin: 0px auto;
+    padding: 1.5%;
+    
+}
+.img-responsive{
+    max-width: 100%;
+}
+.img-curve{
+    border-radius: 8px;
+}
+
+.text-right{
+    text-align: right;
+}
+.text-center{
+    text-align: center;
+}
+.text-left{
+    text-align: left;
+}
+.text-white{
+    color: white;
+}
+
+.clearfix{
+    clear: both;
+    float: none;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+a:hover{
+    color:black;
+}
+
+.btn{
+    padding: 1%;
+    border: none;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.btun{
+    padding: 1%;
+position: sticky;
+    margin: -20%;
+    border: none;
+    font-size: 2rem;
+    border-radius: 10px;
+}
+.btn-primary-f{
+    background-color: #34fa4b;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    
+    
+}
+.btn-primary{
+    background-color: #fae634;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+.btn-primary:hover{
+    color: white;
+    background-color: #ff4757;
+}
+h2{
+    color:rgb(21, 255, 0);
+    font-size: 2rem;
+    margin-bottom: 2%;
+}
+h3{
+    font-size: 10vw;
+}
+.float-container{
+    position: relative;
+}
+.float-text{
+    position: absolute;
+    bottom: 50px;
+    left: 40%;
+    
+}
+fieldset{
+    border: 1px solid white;
+    margin: 5%;
+    padding: 3%;
+    border-radius: 5px;
+}
+
+/*Css for navbar section/* CSSS for navbar section */
+.navbar{
+    max-width:100%;
+background-color:red;
+margin: 0px;
+padding: 0px;
+}
+.logo{
+    width: 10%; 
+    float: left;
+}
+                                                                                                                                      
+.menu{
+    line-height: 60px;
+    
+}
+.menu ul{
+    list-style-type: none;
+    height: 60px;
+    margin-top: 11px;
+}
+
+.menu ul li{
+    display: inline;
+    padding: 1%;
+    font-weight: bold;
+    margin: 0.5%;
+}
+
+.menu ul li:hover{
+    background-color: pink;
+}
+
+.menu ul li.active1{
+    background-color:white;
+}
+
+.menu ul li.active1 a{
+    color: whitesmoke
+}
+
+.menu ul li a:hover{
+    color: whitesmoke
+}
+
+.menu ul li a{
+    font-size: 1.8vw;
+    width: 25%;
+    top: 40px;
+    padding:18px 20px 18px 20px;
+    
+}
+/*Advertis css*/
+.img-first{
+    border-radius: 16px;
+    max-width: 50%;
+    max-height: 20%;
+}
+.img-first1{
+    border-radius: 16px;
+    max-width: 30%;
+    max-height: 50%;
+    padding-bottom: 260px;
+    margin-left: 120px;
+}
+
+/* CSS for Categories */
+.categories{
+    padding: 4% 0;
+}
+h2.text-center {
+    text-align: center;
+    color: rgb(255, 247, 0);
+    font-size: 3vw;
+}
+.box-3{
+    width: 28%;
+    float: left;
+    margin: 2%;
+   
+}
+.float-text{
+    color:black;
+    font-size: 2vw;
+    position: absolute;
+    bottom: -25%;
+    left: 10%;
+}
+/* CSS for work Fields */
+.Work-Fields{
+    background-color: #010052;
+    padding: 4% 0;
+}
+
+.Work-Fields-box{
+    width: 43%;
+    
+    margin: 1%;
+    padding: 2%;
+    float: left;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+}
+
+.Work-Fields-img{
+    width: 15%;
+    float: left;
+}
+
+
+
+.Work-Fields-desc{
+    width: 70%;
+    margin-left: 20%;
+}
+
+.carpenter-price{
+    font-size: 1.2rem;
+    margin: 2% 0;
+}
+.carpenter-details{
+    font-size: 1rem;
+    color: #747d8c;
+}
+/* CSS for Social */
+.social ul{
+    list-style-type: none;
+}
+.social ul li{
+    display: inline;
+    padding: 1%;
+}
+/* CSS for Register Section */
+.categories{
+    padding:  0%;
+}
+
+.box-3{
+    width: 28%;
+    float: left;
+    margin: 2%;
+}
+/* CSS for hire mason box */
+.hire-mason-box{
+background-color: #fae634;
+width:20%;
+height:25%;
+border-style: solid;
+border-width: 15px;
+}
+.hire-mason-img{
+    width: 50%;
+    height:5%;
+
+    
+  
+}
+.hire-mason-desc{
+    font-size: 24px;
+    padding-left: 40%;
+    padding-bottom: 40%;
+margin-left:-150px;
+}
+
+
+
+
